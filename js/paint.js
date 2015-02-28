@@ -1,8 +1,8 @@
 
 var Paint = function(){
   
-  var element = window.paint;
-  var ctx = element.getContext('2d');
+  var element = window.paint,
+    ctx = element.getContext('2d');
   element.width = 800;
   element.height = 600;
 
@@ -10,14 +10,13 @@ var Paint = function(){
   ctx.fillRect(0,0,element.width, element.height);
   ctx.fillStyle = '#000';
 
-  var line = false;
-  var buffer = null;
-  var buf = {x:null,y:null, h:null, w: null};
-  var colors = document.querySelectorAll('input[name="color"]');
-  var activeColor = 0;
-
-  var startPoint = {x:null, y:null};
-  var clean = ctx.getImageData(0,0,element.width,element.height);
+  var line = false,
+    buffer = null,
+    buf = {x:null,y:null, h:null, w: null},
+    colors = document.querySelectorAll('input[name="color"]'),
+    activeColor = 0,
+    startPoint = {x:null, y:null},
+    clean = ctx.getImageData(0,0,element.width,element.height);
   
   function save2Buffer(x0,y0,x1,y1){
     if(x0>x1){
@@ -38,7 +37,7 @@ var Paint = function(){
     buffer = null;
   } /* restoreBuffer */
 
-  this.init = function init(){
+  function init(){
     initToolbar();
     setActiveColor(0);
 
@@ -79,7 +78,6 @@ var Paint = function(){
       ctx.moveTo(startPoint.x,startPoint.y);
     });
 
-
   };/* init */
 
   setActiveColor = function(_index){
@@ -99,18 +97,20 @@ var Paint = function(){
     }
   } /* initToolbar */
 
+  // Public
+  this.init = init;
+
 }
 
-function fn() {
+function runApplication() {
   var paint = new Paint();
   paint.init();
-
 }
 
 (function ready(fn) {
   if (document.readyState != 'loading'){
     fn();
   } else {
-    document.addEventListener('DOMContentLoaded', fn);
+    document.addEventListener('DOMContentLoaded', runApplication);
   }
-})(fn)
+})(runApplication)
