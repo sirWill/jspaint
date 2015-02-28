@@ -1,0 +1,104 @@
+body{
+    background-color: #ECEFF1;
+}
+
+h1{
+    font-size: 2.75rem;
+    line-height: 1.4;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin-top: 0.3em;;
+    margin-bottom: 0.2em;
+    color: #006064;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+}
+
+.menu > div, .menu > input { display: none; }
+
+.menu label { 
+    padding: 5px 15px;
+    line-height: 28px; 
+    cursor: pointer; 
+    position: relative; 
+    background: #E1F5FE; 
+    width: 150px;
+    margin: auto 0;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    background-color: #B2EBF2;
+    border-right: 1px solid #26C6DA;
+    font-weight: bold;
+    font-size: 16px;
+    color: #006064;
+    
+}
+
+.menu label:hover{
+    background-color: #26C6DA;
+}
+
+.menu label:nth-of-type(3){
+    border-right: none;
+}
+
+.menu input[type="radio"]:checked + label {
+    background-color: #00BCD4;
+    color: #ffffff;
+}
+
+.menu > input:nth-of-type(1):checked ~ div:nth-of-type(1),
+.menu > input:nth-of-type(2):checked ~ div:nth-of-type(2),
+.menu > input:nth-of-type(3):checked ~ div:nth-of-type(3)
+{ 
+    width: 800px;
+    display: block; 
+    padding: 5px; 
+    background-color: #00BCD4;
+    color: #ffffff;
+    min-height: 70px;
+    padding: 0;
+    
+}
+
+.menu .colors>input{
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 10px 2px;
+    filter:alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+    cursor: pointer;
+}
+
+.menu .colors>input + span{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 10px 2px;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(20, 20, 20, 0.8);
+    -moz-box-shadow:    1px 1px 2px 0px rgba(20, 20, 20, 0.8);
+    box-shadow:         1px 1px 2px 0px rgba(20, 20, 20, 0.8);
+}
+
+.menu .colors>input + span{
+    /*    visibility: hidden; */
+	background: green;
+    
+}
+
+input[type="radio"]:checked + span{
+    visibility: visible;
+    -webkit-box-shadow: 3px 3px 15px 0px rgba(20, 20, 20, 0.8);
+    -moz-box-shadow:    3px 3px 15px 0px rgba(20, 20, 20, 0.8);
+    box-shadow:         3px 3px 15px 0px rgba(20, 20, 20, 0.8);
+}
+
+

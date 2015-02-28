@@ -3,34 +3,35 @@
 <head>
   <meta charset="utf8">
   <title>JSPaint</title>
-
-  <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
-  <!--<![endif]-->
-  <style>
-  body{
-    background-color: #cccccc;
-  }
-  .content {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    max-width: 768px;
-  }
-  </style>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <div class="content pure-g">
     <div class="pure-u-1-2">
       <h1>jsPaint </h1>
+      <section class="menu">
+          <input type="radio" name="odin" checked="checked" id="vkl1"/><label for="vkl1">Главная</label><input type="radio" name="odin" id="vkl2"/><label for="vkl2">Вид</label><input type="radio" name="odin" id="vkl3"/><label for="vkl3">О программе</label>
+          <div>
+            <div class="colors">
+                <input class="color {styleElement:'color1'}"  value="03A9F4" type="radio" name="color" checked="checked" />
+                <span id="color1"></span>
+                <input class="color {styleElement:'color2'}"  value="F44336" type="radio" name="color" />
+                <span id="color2"></span>
+                <input class="color {styleElement:'color3'}"  value="CDDC39"  type="radio" name="color" />
+                <span id="color3"></span>
+                <input class="color {styleElement:'color4'}"  value="9C27B0" type="radio" name="color" />
+                <span id="color4"></span>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
+      </section>
       <canvas id="paint"></canvas>
     </div>
   </div>
-  <script src="js/lib/jquery-1.11.2.js"></script>
+  
+  <script src="js/jscolor/jscolor.js"></script>
   <script src="js/paint.js?v5"></script>
 </body>
 </html>
