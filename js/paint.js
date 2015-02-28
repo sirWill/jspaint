@@ -9,8 +9,8 @@ var Paint = function(){
   ctx.fillRect(0,0,element.width, element.height);
   var line = false;
 
-  var colors = ['#03A9F4', '#F44336', '#CDDC39', '#9C27B0'];
-
+  var colors = document.querySelectorAll('input[name="color"]');
+  var activeColor = 0;
   this.init = function init(){
     
     initToolbar();
@@ -33,9 +33,22 @@ var Paint = function(){
 
   };/* init */
 
+  setActiveColor = function(_index){
+    ctx.strokeStyle = "#"+colors[_index].value;
+  }
 
   function initToolbar(){
-    
+
+    function colorSelect(e){
+      setActiveColor(parseInt(e.target.nextElementSibling.attributes.id.value.slice(-1)));
+      e.preventDefault();
+    }
+
+    var colors = document.querySelectorAll('input[name="color"]');
+    for(var i=0; i<colors.length; i++){
+      colors[i].addEventListener('change', colorSelect);
+    }
+    // document.querySelectorAll('input[name="color"]:checked+span')
   }
 
 }
